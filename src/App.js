@@ -14,6 +14,8 @@ const style = {
 function App() {
   const [user] = useAuthState(auth)
 
+  console.log(auth.currentUser.photoURL)
+
   return (
     <div className='w-screen h-screen bg-gray-800'>
       <div className={style.appContainer}>

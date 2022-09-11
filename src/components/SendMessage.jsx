@@ -18,10 +18,11 @@ const SendMessage = ({scroll}) => {
   const uploadMsg = async (e) => {
     e.preventDefault()
     if(text !== ''){
-      const {uid, displayName} = auth.currentUser;
+      const {uid, displayName, photoURL} = auth.currentUser;
       await addDoc(collection(db, 'messages'), {
         text: text,
         name: displayName,
+        photo: photoURL,
         uid,
         timestamp: serverTimestamp()
       })
